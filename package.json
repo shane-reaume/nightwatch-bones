@@ -2,13 +2,6 @@
   "name"    : "nightWatch-bones",
   "version" : "0.1.0",
 
-
-  "scripts": {
-    "night": "./node_modules/.bin/nightwatch",
-    "server": "java -jar ./ui/bin/selendroid-standalone-0.17.0-with-dependencies.jar"
-  },
-
-
   "dependencies": {
     "chromedriver": "^2.27.2",
     "nightwatch": "~0.9.12",
