@@ -8,6 +8,9 @@ Nightwatch test framework with my favorite pre-loaded features.
 - `npm install -g nightwatch`
     
 ### Native Web (Chrome)
-- Start Google sample web app and test with NightWatch UI POM suite
-    - `nightwatch --group googleExampleTest`
+- Start Google sample test
+    - `nightwatch --env chrome --group googleExampleTest`
+    
+- Windows?
+    - `nightwatch --env chromewin --group googleExampleTest`
     
