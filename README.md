@@ -11,6 +11,3 @@ Nightwatch test framework with my favorite pre-loaded features.
 - Start Google sample test
     - `nightwatch --env chrome --group googleExampleTest`
     
-- Windows?
-    - `nightwatch --env chromewin --group googleExampleTest`
-    

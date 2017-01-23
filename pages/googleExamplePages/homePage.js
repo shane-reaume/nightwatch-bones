@@ -8,7 +8,9 @@ var searchCommands = {
 };
 
 module.exports = {
-  url: 'http://google.com',
+  url: function() {
+      return this.api.launch_url;
+  },
   commands: [searchCommands],
   elements: {
     searchBar: { selector: 'input[name=q]' },

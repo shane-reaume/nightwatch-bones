@@ -1,4 +1,6 @@
 module.exports = (function(settings) {
+    var platform = require('platform');
+    var chromePath = (platform.os.family == "Win32") ? "./bin/chromedriver.exe" : "./node_modules/.bin/chromedriver";
 
   settings = {
     "src_folders" : ["./tests"],
@@ -17,15 +19,11 @@ module.exports = (function(settings) {
         "server_path" : "./bin/selenium-server-standalone-2.53.0.jar",
         "log_path" : "./reports",
         "host" : "127.0.0.1",
-        "port" : 4444,
-        "cli_args" : {
-        "webdriver.chrome.driver": "./node_modules/.bin/chromedriver"
-      }
+        "port" : 4444
     },
 
     "test_settings" : {
       "default" : {
-        "launch_url" : "http://localhost",
           "selenium_host" : "127.0.0.1",
           "selenium_port" : 4444,
           "silent" : true,
@@ -45,21 +43,17 @@ module.exports = (function(settings) {
       },
 
       chrome : {
-        "desiredCapabilities": {
-          "browserName": "chrome"
-        }
-      },
-
-      chromewin : {
+          "launch_url" : "https://google.com",
         "desiredCapabilities": {
           "browserName": "chrome"
         },
         "selenium" : {
-          "cli_args" : {
-            "webdriver.chrome.driver": "./bin/chromedriver.exe"
-          }
-        },
-      },
+            "cli_args": {
+                "webdriver.chrome.driver": chromePath
+            }
+        }
+      }
+
     }
   };
 

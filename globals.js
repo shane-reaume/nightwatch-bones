@@ -1,4 +1,7 @@
 var HtmlReporter = require('nightwatch-html-reporter');
+var platform = require('platform');
+
+var os = platform.os.toString();
 
 // allow args like --baseUrl
 var arg = process.argv;
@@ -11,14 +14,14 @@ function indOfArg(key, arg) {
   }
 }
 
-var defaultUrl = './';
+var defaultUrl = 'http://google.com';
 
 // reports saved and shown in web page after ran, set to false for production
 var reporter = new HtmlReporter({
   openBrowser: true,
   reportsDirectory: __dirname + '/reports/',
   themeName: 'default',
-  reportFilename: 'report.html'
+  reportFilename: os.split(' ').join('-') + '-report.html'
 });
 
 module.exports = {
